@@ -5,7 +5,8 @@
 struct phonebook getData();
 void printData(struct phonebook);
 
-struct phonebook {
+struct phonebook
+{
 	char name[11];
 	char tel_num[11];
 };
@@ -17,24 +18,31 @@ int main()
 	struct phonebook phb[5];
 	system("cls");
 
-	do {
+	do 
+	{
 		printf("How many number do you want to add tel.no (Maximum:5) : ");
 		gets_s(tmp);
-	} while (atoi(tmp) < 0 || atoi(tmp) > 5);
+	} 
+	while (atoi(tmp) < 0 || atoi(tmp) > 5);
 	num = atoi(tmp);
 	printf("Please add data\n");
-	for (i = 0; i < num; i++) {
+
+	for (i = 0; i < num; i++) 
+	{
 		phb[i] = getData();
 	}
 	printf("\nData list\n");
-	for (i = 0; i < num; i++) {
+
+	for (i = 0; i < num; i++) 
+	{
 		printData(phb[i]);
 	}
 	printf("Already Add !!!\n");
 	_getch();
 }
 
-struct phonebook getData() {
+struct phonebook getData() 
+{
 	struct phonebook phone;
 
 	printf("Enter name : ");
@@ -44,6 +52,7 @@ struct phonebook getData() {
 	return phone;
 }
 
-void printData(struct phonebook pb) {
+void printData(struct phonebook pb) 
+{
 	printf("%s\t%s\n", pb.name, pb.tel_num);
 }
